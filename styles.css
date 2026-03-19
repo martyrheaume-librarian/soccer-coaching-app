@@ -24,6 +24,18 @@ body {
   color: var(--text);
 }
 
+.test-mode-banner {
+  padding: 14px 20px;
+  background: #fff1f1;
+  color: #ff0000;
+  text-align: center;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 3px solid #ff0000;
+}
+
 .app-shell {
   max-width: 1200px;
   margin: 0 auto;
