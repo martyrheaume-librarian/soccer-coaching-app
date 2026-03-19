@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soccer Practice Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Practice Planner</p>
+        <h1>Soccer Practice Builder</h1>
+      </div>
+      <div class="time-card">
+        <span class="time-label">Total Practice Time</span>
+        <strong id="total-time">0 min</strong>
+      </div>
+    </header>
+
+    <section class="app-grid">
+      <aside class="panel">
+        <div class="panel-heading">
+          <h2>Drill Library</h2>
+          <p>Choose a block, then click a drill to assign it.</p>
+        </div>
+        <div class="library-search-row">
+          <label class="control-group">
+            <span class="control-label">Search</span>
+            <input id="drill-search" class="library-control library-search" type="search" placeholder="Search drills">
+          </label>
+        </div>
+        <div class="library-controls">
+          <label class="control-group">
+            <span class="control-label">Session Focus</span>
+            <select id="session-focus-filter" class="library-control" aria-label="Filter by session focus"></select>
+          </label>
+          <label class="control-group">
+            <span class="control-label">Concept</span>
+            <select id="concept-filter" class="library-control" aria-label="Filter by concept"></select>
+          </label>
+          <label class="control-group">
+            <span class="control-label">Activity Type</span>
+            <select id="activity-filter" class="library-control" aria-label="Filter by activity type"></select>
+          </label>
+        </div>
+        <p id="library-message" class="library-message" aria-live="polite"></p>
+        <div id="drill-library" class="drill-library"></div>
+      </aside>
+
+      <section class="panel">
+        <div class="panel-heading">
+          <h2>Practice Builder</h2>
+          <p id="selection-status">Select a practice block to start assigning drills.</p>
+        </div>
+        <div id="practice-builder" class="practice-builder"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

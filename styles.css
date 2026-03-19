@@ -1,0 +1,343 @@
+:root {
+  --bg: #f4f1ea;
+  --panel: #fffdfa;
+  --panel-strong: #fff;
+  --border: #d8d1c4;
+  --text: #1e1d1a;
+  --muted: #6b675d;
+  --accent: #205c43;
+  --accent-soft: #e6f1eb;
+  --danger: #b0473c;
+  --shadow: 0 14px 34px rgba(40, 34, 23, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.85), transparent 30%),
+    linear-gradient(180deg, #f7f3eb 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+}
+
+h2 {
+  margin-bottom: 6px;
+  font-size: 1.3rem;
+}
+
+.time-card,
+.panel,
+.drill-card,
+.practice-block {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.time-card {
+  min-width: 180px;
+  padding: 16px 18px;
+  text-align: right;
+}
+
+.time-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#total-time {
+  font-size: 1.8rem;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+  gap: 20px;
+}
+
+.panel {
+  padding: 20px;
+}
+
+.panel-heading p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.library-search-row {
+  margin-bottom: 12px;
+}
+
+.library-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.control-group {
+  display: grid;
+  gap: 6px;
+}
+
+.control-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.library-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fcfaf5;
+  color: var(--text);
+  font: inherit;
+}
+
+.library-search {
+  padding-block: 12px;
+}
+
+.library-control:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(32, 92, 67, 0.12);
+}
+
+.library-message {
+  min-height: 1.2em;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.drill-library,
+.practice-builder {
+  display: grid;
+  gap: 14px;
+}
+
+.drill-card {
+  width: 100%;
+  padding: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.drill-card:hover,
+.drill-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.card-top,
+.block-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.meta-pill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.card-details,
+.block-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.detail-label {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.drill-summary {
+  margin-top: 14px;
+}
+
+.summary-text {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.cue-list {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.45;
+}
+
+.cue-list li + li {
+  margin-top: 4px;
+}
+
+.cue-empty {
+  margin: 0;
+  color: var(--muted);
+}
+
+.practice-block {
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.practice-block:hover,
+.practice-block:focus-visible {
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.practice-block.selected {
+  border-color: var(--accent);
+  background: var(--panel-strong);
+  box-shadow: 0 16px 36px rgba(32, 92, 67, 0.16);
+}
+
+.block-name {
+  margin-bottom: 0;
+}
+
+.assigned-drill {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #f7f5ef;
+}
+
+.assigned-title {
+  display: inline-block;
+  font-size: 1.02rem;
+}
+
+.assigned-drill.empty {
+  color: var(--muted);
+}
+
+.notes-area {
+  margin-top: 14px;
+}
+
+.block-notes {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fcfaf5;
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.block-notes:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(32, 92, 67, 0.12);
+}
+
+.remove-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #f4dfdc;
+  color: var(--danger);
+  cursor: pointer;
+  font: inherit;
+}
+
+.remove-button:hover,
+.remove-button:focus-visible {
+  outline: none;
+  filter: brightness(0.98);
+}
+
+@media (max-width: 860px) {
+  .app-header,
+  .app-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .time-card {
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-shell {
+    padding-inline: 14px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .library-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .card-details,
+  .block-details {
+    grid-template-columns: 1fr;
+  }
+}
